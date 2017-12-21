@@ -10,13 +10,14 @@ GPIO.setup(11, GPIO.IN)	# Read output from PIR motion sensor
 
 camera = PiCamera()
 camera.resolution = (720,480)
-#camera.start_preview()
+# TODO: try high ISO value for low light
+# https://picamera.readthedocs.io/en/release-1.13/recipes1.html#capturing-in-low-light
+# https://stackoverflow.com/questions/30063974/how-to-set-the-camera-in-raspberry-pi-to-take-black-and-white-image
 while True:
 	i = GPIO.input(11)
 	if i == 0:
-		sleep(.1)	
+		sleep(.1)
 	elif i == 1:
-		
 		ticks = int(time.time())
 		datetime_stamp = datetime.datetime.now().time()
 		camera.annotate_text = str(datetime_stamp)
