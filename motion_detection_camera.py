@@ -9,7 +9,9 @@ GPIO.setmode(GPIO.BOARD)
 GPIO.setup(11, GPIO.IN)	# Read output from PIR motion sensor
 
 camera = PiCamera()
-camera.resolution = (720,480)
+camera.resolution = (1920, 1080)
+camera.color_effects = (128, 128)
+
 # TODO: try high ISO value for low light
 # https://picamera.readthedocs.io/en/release-1.13/recipes1.html#capturing-in-low-light
 # https://stackoverflow.com/questions/30063974/how-to-set-the-camera-in-raspberry-pi-to-take-black-and-white-image
