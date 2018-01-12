@@ -15,6 +15,7 @@ camera.color_effects = (128, 128)
 # TODO: try high ISO value for low light
 # https://picamera.readthedocs.io/en/release-1.13/recipes1.html#capturing-in-low-light
 # https://stackoverflow.com/questions/30063974/how-to-set-the-camera-in-raspberry-pi-to-take-black-and-white-image
+print("Starting motion detection...")
 while True:
 	i = GPIO.input(11)
 	if i == 0:
